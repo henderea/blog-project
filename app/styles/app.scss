@@ -1,0 +1,38 @@
+$borderColor: #bbb;
+$postBackgroundColor: white;
+body {
+  max-width:        500px;
+  margin:           auto;
+  background-color: #eee;
+}
+
+.new-post {
+  max-width:        400px;
+  background-color: $postBackgroundColor;
+  border:           1px solid $borderColor;
+  padding-left:     10px;
+}
+
+.post {
+  background-color: $postBackgroundColor;
+  border:           1px solid $borderColor;
+  padding:          0 10px;
+  margin-top:       30px;
+}
+
+div.preview {
+  border:     1px solid $borderColor;
+  display:    inline-block;
+  padding:    0 10px 10px;
+  max-width:  360px;
+  width:      360px;
+  min-height: 88px;
+  div {
+    margin-top: -10px;
+  }
+}
+
+button.pull-right {
+  display: block;
+  margin:  -10px 10px 5px auto;
+}

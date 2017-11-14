@@ -1,0 +1,20 @@
+<h1>My Blog</h1>
+<div class="new-post">
+  <h3>New blog post</h3>
+  {{input value=newTitle placeholder='Title' size=60}}<br /><br />
+  {{#if previewing}}
+    <button class="pull-right" {{action 'togglePreview'}}>Edit</button>
+    <div class="preview">{{markdown-to-html newContent}}</div><br/><br/>
+  {{else}}
+    <button class="pull-right" {{action 'togglePreview'}}>Preview</button>
+    {{textarea value=newContent placeholder='Body of blog post goes here' cols=60 rows=8}}<br /><br />
+  {{/if}}
+  <button class="pull-right" {{action 'addPost'}}>Create</button>
+</div>
+{{#each model as |post|}}
+  <div class="post">
+    <h3>{{post.title}}</h3>
+    <p>{{markdown-to-html post.content}}</p><br/>
+    <button class="pull-right" {{action 'deletePost' post}}>Delete Post</button>
+  </div>
+{{/each}}
